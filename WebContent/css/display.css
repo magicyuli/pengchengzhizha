@@ -1,0 +1,11 @@
+﻿.ondisplay .bot_dec{background:url(../img/bottom-decration-display.png) no-repeat 0 0 transparent;height:558px;position:absolute;bottom:84px;}
+
+.main{margin:0 auto 513px;}
+
+.display_title{text-align:right;font-size:40px;color:#715f4b;font-family:"楷体";font-weight:bold;padding-right:40px;}
+.display_title_eng{display:block;text-align:right;font-size:40px;color:#715f4b;font-weight:bold;}
+
+.item{width:806px;margin:0 auto;}
+.display_frame{background:url(../img/display-frame.png) no-repeat scroll 0 0 transparent;height:627px;text-align:center;overflow:hidden;}
+.display_frame img{display:block;margin-top:40px;margin:40px auto 0;}
+.item p{text-align:right;font-family:"楷体";font-weight:bold;font-size:30px;color:#816444;padding:0.7em 0 1.5em;}

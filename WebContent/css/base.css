@@ -1,0 +1,27 @@
+﻿*{margin:0;padding:0;}
+
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+li{list-style-type:none;}
+
+.w1220{width:1220px;}
+.w964{width:964px;}
+.w960{width:960px;}
+
+.center{margin:0 auto;}
+.fr{float:right;}
+.fl{float:left;}
+.clearfix{*zoom:1;}
+.clearfix:after{visibility:hidden;display:block;font-size:0;height:0;content:".";clear:both;}
+
+
+
+
+.sprite-dimond{ background-position: 0 0;  } 
+.sprite-nav-sel{ background-position: -21px 0;  } 
+.sprite-nav-unsel{ background-position: -128px 0;  } 
+.sprite-phone{ background-position: -235px 0;  } 
+.sprite-slide-left{ background-position: -269px 0;  } 
+.sprite-slide-right{ background-position: -281px 0;  } 
+.sprite-vermeil-cloud{ background-position: -293px 0;  } 
+.sprite-vermeil-title{ background-position: -337px 0;  } 

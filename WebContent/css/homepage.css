@@ -1,0 +1,82 @@
+﻿.onindex .bot_dec{background:url(../img/bottom-decration.png) no-repeat 0 0 transparent;height:382px;position:absolute;bottom:84px;}
+
+.main{margin-bottom:255px;}
+
+.subtitle{color:#733031;font-size:14px;padding-left:15px;font-family:"微软雅黑";position:relative;}
+.subtitle span{font-family:arial;color:#bdae93;font-weight:normal;vertical-align:-5%;}
+.subtitle span.big{font-size:30px;}
+
+.slide_pointer{position:absolute;}
+.slide_pointer li{display:block;float:left;background:#000000;opacity:0.8;filter:alpha(opacity=80);line-height:20px;width:20px;text-align:center;color:#ffffff;list-style:none;margin:0 0 0 1px;font-family:Tahoma;font-weight:bold;cursor:pointer;}
+.slide_pointer li:hover,
+.slide_pointer li.onselected{opacity:0.5;filter:alpha(opacity=50);}
+
+#top{background:url(../img/roll.png) no-repeat 0 0 transparent;height:408px;}
+
+#newProduct .subtitle{padding-left:25px;}
+.slideshow.big{width:648px;height:309px;overflow:hidden;border:#743031 solid 2px;margin:15px 0 0 16px;position:relative;}
+.slideshow.big .slide_pointer{bottom:1px;right:1px;}
+.pics.big{width:3240px;position:absolute;}
+
+
+#contactUs{padding-top:31px;margin:0 0 3px 668px;*margin-bottom:25px;}
+#contactUs p{padding:8px 0 2px 15px;color:#785d4a;font-size:11px;}
+
+#news{margin:0 0 0 668px;width:280px;}
+#news .subtitle .more{color:#BFB199;right:0;bottom:5px;}
+#newsList li{margin:8px 0 0 15px;border-bottom:#3a3a3a 1px dotted;padding-bottom:8px;color:#785d4a;font-size:11px;list-style-type:square;list-style-position:inside;}
+#newsList li a{color:#785d4a;}
+#newsList li a:hover{color:#743031;}
+
+#middle{margin:10px 0;}
+#middle .subtitle{}
+
+.more{font-size:9px;color:#733031;position:absolute;}
+.more:hover{text-decoration:underline;}
+
+#video{margin-right:25px;width:242px;}
+#video .subtitle{background:url(../img/dimond.png) no-repeat 0 0 transparent;line-height:25px;padding-left:25px;border-bottom:#723031 3px solid;margin-bottom:5px;}
+#video .subtitle .more{right:5px;}
+#playVideo{cursor:pointer;}
+#videoContainer{}
+
+#about{width:410px;}
+#about .subtitle{background:url(../img/vermeil-title.png) no-repeat 0 0 transparent;line-height:32px;*line-height:32px;*background-position:0 5px;color:#ffffff;padding:0 45px 0 25px;}
+#about .subtitle .more{right:35px;*top:-5px;}
+#about .subtitle a{color:#ffffff;}
+#about p{color:#785d4a;letter-spacing:5px;font-size:11px;text-indent:2em;line-height:20px;padding:5px 10px 0;text-indent:32px;}
+
+
+#process{width:272px;}
+#process .subtitle{background:url(../img/vermeil-cloud.png) no-repeat 0 0 transparent;height:30px;padding:0 0 0 45px;}
+#process .subtitle .more{right:5px;top:10px;}
+.slideshow.small{width:247px;height:175px;margin:8px 0 0 25px;position:relative;overflow:hidden;}
+.slideshow.small .slide_pointer{bottom:5px;right:6px;z-index:1;}
+.slideshow.small .frame{width:247px;height:175px;background:url(../img/vermeil-frame.png) no-repeat 0 0 transparent;position:absolute;z-index:1;}
+.pics.small{width:1185px;margin:6px 0 0 4px;position:absolute;}
+
+
+#recom{height:180px;background:url(../img/recom-bg.png) no-repeat 0 0 transparent;width:941px;margin:10px 0 0 4px;border-radius:2px;}
+#recom h1{font-size:14px;padding:10px 15px 5px 6px;font-family:"微软雅黑";}
+#recom h1 span{padding:2px;margin-left:2px;color:#ffffff;}
+#recom h1 .more{color:#4c2b03;right:30px;}
+.c1{background:#ee587b;}
+.c2{background:#f1726a;}
+.c3{background:#e8a818;}
+.c4{background:#8db389;}
+
+.recom_slide{background:#f5f5f5;border-radius:2px;overflow:hidden;padding:8px 20px;margin:0 6px;position:relative;}
+
+.recoms{width:2000px;position:relative;}
+.recom_unit{width:150px;height:125px;float:left;text-align:center;margin:0 6px;}
+.pic{background:#e1cdb2;border:#cdcdcd 1px solid;border-radius:2px;padding:2px;margin:0 0 10px;}
+.pic img{vertical-align:middle;}
+.tag{color:#785d4a;}
+
+.slide_arrow{position:absolute;top:0;bottom:0;width:26px;background-position:8px 60px;background-color:#f5f5f5;background-repeat:no-repeat;cursor:pointer;z-index:1;}
+.slide_arrow:hover{background-position:-29px 60px;}
+#arrow_left{background-image:url(../img/slide-left-d.png);left:0;}
+#arrow_right{background-image:url(../img/slide-right-d.png);right:0;}
+
+
+

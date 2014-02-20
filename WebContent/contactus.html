@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>联系我们_岛城鹏程脂渣</title>
+	<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link type="text/css" rel="stylesheet" href="css/base.css" media="all" />
+	<link type="text/css" rel="stylesheet" href="css/common.css" media="all" />
+	<link type="text/css" rel="stylesheet" href="css/contact.css" media="all" />
+</head>
+<body>
+	<div id="bg" class="bg w1220 center">
+	
+		<div id="headerContainer"></div>
+		
+		<div class="flash w960 center">
+			<object id="flash" width="960" height="381">
+				<embed width="960" height="381" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="swf/6.swf">
+			</object>
+		</div>
+		
+		<div id="main" class="main">
+			<div class="contact_pic"></div>
+		</div>
+		<div id="footer" class="footer"></div>
+	</div>
+	<script type="text/javascript" src="js/require-jquery.js"></script>
+	<script type="text/javascript">
+		var SEQ = 6;
+		require.config({
+			baseUrl: "js",
+			shim: {
+                "jquery.tmpl": ["jquery"]
+            }
+		});
+		require(["simple"]);
+	</script>
+	<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F63a4b87e1919766237ab9be47ffba671' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+</body>
+</html>

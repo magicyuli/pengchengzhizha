@@ -1,0 +1,54 @@
+﻿body{font-size:12px;font-family:"微软雅黑";background:#5C1f0f;}
+
+.container{width:75%;margin:0 auto;}
+
+.mask{position:fixed;background:#000000;opacity:0.7;filter:alpha(opacity=70);top:0;right:0;left:0;bottom:0;z-index:99;}
+
+.delimiter{background:url(../img/delimiter.png) no-repeat 0 0 transparent;height:10px;width:100%;}
+
+.bot_dec{background:url(../img/bottom-decration-about.png) no-repeat 0 0 transparent;height:498px;position:absolute;bottom:84px;}
+
+.bg{background:url(../img/bg.jpg) no-repeat fixed 50% 0 transparent;position:relative;}
+.top_bar{background:url(../img/top-dec-bar.png) repeat scroll 0 0 transparent;height:32px;}
+
+
+.header{position:relative;margin:15px 0;}
+.title{background:url(../img/title.png) no-repeat scroll 0 0 transparent;width:141px;height:105px;position:absolute;left:52px;}
+.logo{background:url(../img/logo.png) no-repeat scroll 0 0 transparent;width:116px;height:107px;}
+
+.opts{line-height:21px;position:absolute;top:0;right:117px;}
+.opts li{margin-right:1px;width:76px;height:21px;cursor:normal;text-align:center;font-family:"微软雅黑";font-size:13px;font-weight:bold;}
+#favorite{background:#d7d7d7;color:#743031;}
+#homepage{background:#743031;color:#ffffff;}
+
+.contact{text-align:right;position:absolute;top:50px;right:117px;}
+.phone{background:url(../img/phone.png) no-repeat scroll 0 0 transparent;padding-left:40px;line-height:22px;display:block;color:#743031;font-size:23px;}
+.time{color:#d7d7d7;display:block;}
+
+.nav{width:749px;padding-top:13px;}
+.nav a{background:url(../img/nav-d.png) no-repeat 0 0 transparent;width:106px;line-height:36px;text-align:center;list-style:none;font-size:15px;margin-right:1px;font-family:"楷体","微软雅黑";font-weight:bold;display:block;color:#702d2e;}
+.nav a:hover{background-position:0 -36px;color:#d92318;}
+.nav a.selected{background:url(../img/nav-d.png) no-repeat 0 -36px transparent;color:#d92318;}
+
+
+
+
+.flash{height:381px;margin-bottom:20px;}
+
+
+
+.main{position:relative;z-index:1;}
+
+
+
+.footer{background:url(../img/bot-dec-bar.png) repeat 0 0 transparent;height:54px;padding-top:30px;}
+.footer p{text-align:center;color:#b8a386;line-height:25px;}
+.footer p span{margin:0 10px;}
+.footer p a{color:#b8a386;text-decoration:none;}
+.footer p a:hover{text-decoration:underline;}
+
+
+
+
+
+
