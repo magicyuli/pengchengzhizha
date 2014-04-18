@@ -3,7 +3,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"  content="IE-edge" />
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<meta name="author" content="magicyuli" />
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/manage-common.css" />
@@ -58,6 +58,7 @@
 		var initPage = 1;
 		var pageSize = CONF.news.list.pageSize.manage;
 		var halfPage = CONF.news.list.halfPagination.manage;
+		var ajaxUrl = CONF.news.list.ajaxUrl.manage;
 		
 		var renderTable = function(result) {
 			var $tbody = $('#newsListTable tbody').empty();
@@ -86,7 +87,7 @@
 			TOOLS.adjustParentIframeHeight("content_frame", 600);
 		}
 		
-		TOOLS.listUtils.init(initPage, pageSize, halfPage, renderTable);
+		TOOLS.listUtils.init(initPage, pageSize, halfPage, ajaxUrl, renderTable);
 	</script>
 </body>
 </html>

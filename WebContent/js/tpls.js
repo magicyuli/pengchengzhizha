@@ -11,10 +11,18 @@ typeof define === "function" && define({
 
 (function() {
 
-window.TPLS = window.TPLS || {};
-TPLS.newsList = {
+var tpls = window.TPLS = window.TPLS || {};
+tpls.newsList = {
 	public_item : '<tr><td>${0}</td><td><a target="_blank" title="${2}" href="/news/display/?id=${4}">${1}</a></td><td>${3}</td></tr>',
 	manage_item : '<tr><td>${0}</td><td><a target="_blank" title="${2}" href="/news/display/?id=${4}">${1}</a></td><td>${5}</td><td>${6}</td><td>${3}</td><td><a target="_self" href="/manage/news/edit/?id=${4}" style="margin-right:5px;">编辑</a><a target="_self" href="/manage/news/delete/?id=${4}" class="delete">删除</a></td></tr>'
 };
+
+tpls.messageList = {
+	item : '<tr><td>${0}</td><td><a href="/manage/message/detail/?id=${1}" title="${2}">${3}</a></td><td><span title="${4}">${5}</span></td><td><span title="${6}">${7}</span></td><td>${8}</td><td style="text-align:center">${9}</td></tr>'
+}
+
+tpls.adminList = {
+	item : '<tr data-id="${6}"><td>${0}</td><td>${1}</td><td>${2}</td><td><input type="checkbox" value="1" id="isAdmin_${6}" class="is_admin" ${3} /><label for="isAdmin_${6}">用户管理</label><input type="checkbox" value="1" id="isNewsManager_${6}" class="is_news_manager" ${4} /><label for="isNewsManager_${6}">新闻管理</label><input type="checkbox" value="1" id="isMessageManager_${6}" class="is_message_manager" ${5} /><label for="isMessageManager_${6}">留言管理</label></td></tr>'
+}
 
 })();

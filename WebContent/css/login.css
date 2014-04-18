@@ -4,10 +4,16 @@ body {
   background-color: #eee;
 }
 
-.form-signin {
+.form-signin,
+.form-resend {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  position: relative;
+}
+.form-signin #forgetPassword {
+  position:absolute;
+  right:20px;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -16,7 +22,8 @@ body {
 .form-signin .checkbox {
   font-weight: normal;
 }
-.form-signin .form-control {
+.form-signin .form-control,
+.form-resend .form-control {
   position: relative;
   font-size: 16px;
   height: auto;
@@ -37,4 +44,22 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+
+
+.form-signup .form-signup-heading {
+	padding: 10px;
+}
+.form-signup p.help-block {
+	position: relative;
+}
+.form-signup p.help-block a {
+	position: absolute;
+	right: 0;
+}
+
+
+.form-resend input {
+	margin-bottom: 10px;
 }

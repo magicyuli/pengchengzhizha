@@ -4,23 +4,40 @@
   <artifactId>pengchengzhizha</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <properties>
+  	<mysql-connector.version>5.1.28</mysql-connector.version>
+  	<c3p0.version>0.9.1.2</c3p0.version>
+  	<json.version>20131018</json.version>
+  	<mail.version>1.4.7</mail.version>
+  </properties>
   
   <dependencies>
   	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.28</version>
+		<version>${mysql-connector.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>c3p0</groupId>
 		<artifactId>c3p0</artifactId>
-		<version>0.9.1.2</version>
+		<version>${c3p0.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>org.json</groupId>
 		<artifactId>json</artifactId>
-		<version>20131018</version>
+		<version>${json.version}</version>
 	</dependency>
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>${mail.version}</version>
+	</dependency>
+      <dependency>
+	<groupId>net.tanesha.recaptcha4j</groupId>
+	<artifactId>recaptcha4j</artifactId>
+	<version>0.0.7</version>
+</dependency>
+            
             
   </dependencies>
 </project>

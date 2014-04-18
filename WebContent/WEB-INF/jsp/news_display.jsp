@@ -5,6 +5,7 @@
 <head>
 	<% News news = (News) request.getAttribute("news"); %>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<title><%=news != null ? news.getTitle() : "" %>|岛城鹏程新闻</title>
 	<link href="favicon.ico" type="/image/x-icon" rel="shortcut icon">
 	<link type="text/css" rel="stylesheet" href="/css/base.css" media="all" />

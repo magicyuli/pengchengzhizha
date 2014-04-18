@@ -1,3 +1,8 @@
+.fr{float:right;}
+
+.radio_container{padding:10px;}
+.radio_container label{margin-right:15px;}
+
 .table_container{padding-bottom:80px;}
 
 .pagination_container{text-align:center;width:100%;position:absolute;bottom:0;}

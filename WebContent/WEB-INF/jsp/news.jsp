@@ -3,7 +3,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"  content="IE-edge" />
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<meta name="author" content="magicyuli" />
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
 	<title>岛城鹏程脂渣后台新闻管理</title>

@@ -1,9 +1,12 @@
-<%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8"%> 
+<%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" import="com.pengchengzhizha.entity.User;"%> 
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
+	<%
+		User user = (User) request.getSession().getAttribute("user");
+	%>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"  content="IE-edge" />
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<meta name="author" content="magicyuli" />
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
 	<title>岛城鹏程脂渣后台管理</title>
@@ -27,16 +30,31 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<div class="navbar-brand" style="cursor:default;">岛城鹏程</div>
+				<a class="navbar-brand" href="/" target="_blank">岛城鹏程</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<!--li class="active"><a href="./user/">用户管理</a></li-->
+					<%
+					if (user.isAdmin()) {
+					%>
+					<li><a href="./admin/" target="main_frame">用户管理</a></li>
+					<%
+					}
+					if (user.isNewsManager()) {
+					%>
 					<li><a href="/manage/news/" target="main_frame">新闻管理</a></li>
-					<li><a href="/manage/msg/" target="main_frame">消息管理</a></li>
-					<li><a href="#">网站统计</a></li>
+					<%
+					}
+					if (user.isMessageManager()) {
+					%>
+					<li><a href="/manage/message/" target="main_frame">留言管理</a></li>
+					<%
+					}
+					%>
+					<li><a target="_blank" href="http://tongji.baidu.com/web/6976614/overview/sole?siteId=4254052">网站统计</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/manage/myAccount/" target="main_frame"><%=user.getName() %></a></li>
 					<li><a href="/logout/">登出</a></li>
 				</ul>
 			</div>
@@ -52,7 +70,7 @@
 			$(this).addClass('active').siblings().removeClass('active');
 		});
 		$(function() {
-			$('ul.nav:not(".navbar-right") li').eq(0).find('a')[0].click();
+			$('ul.nav:not(".navbar-right") li').find('a').not('[href="./admin/"],[href="http://tongji.baidu.com/web/6976614/overview/sole?siteId=4254052"]').eq(0)[0].click();
 		});
 	</script>
 </body>

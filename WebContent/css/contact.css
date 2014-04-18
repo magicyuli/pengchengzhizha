@@ -1,3 +1,29 @@
 ﻿.main{margin:20px auto 210px;width:719px;}
 
 .contact_pic{height:344px;background:url(../img/contact.png) no-repeat 0 0 transparent;}
+
+.delimiter{margin:10px 0 10px -10px;}
+
+.message_title{color:#785D4A;padding:10px;}
+.explain{color:#949494;padding-bottom:50px;font-size:21px;font-family:"楷体";padding-left:10px;}
+
+
+.tip{padding-left:10px;}
+
+.required{color:red;vertical-align:middle;}
+.form_table{width:100%;border:none;}
+.form_table tr{height:33px;}
+.form_table input{height:23px;}
+.form_table input,
+.form_table textarea{border:1px solid #AAAAAA;border-radius:2px;box-shadow:0 1px 1px #DDDDDD inset;}
+.form_table input:focus,
+.form_table textarea:focus{border:1px solid #785D4A;box-shadow:0 1px 1px #FFDFFF inset,0 0 5px #5C1F0F;}
+
+.label{text-align:right;width:40%;}
+.label.for_textarea{vertical-align:top;}
+.field{text-align:left;padding-left:5px;}
+.btnContainer{text-align:center;padding:20px 0 0;}
+
+button{background:none repeat scroll 0 0 #FFFFFF;border:1px solid #CCCCCC;border-radius:4px;color:#333333;display:inline-block;padding:3px 6px;}
+
+button:hover{border-color:#adadad;background-color:#ebebeb;}

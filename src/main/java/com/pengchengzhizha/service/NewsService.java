@@ -2,8 +2,8 @@ package com.pengchengzhizha.service;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Timestamp;
+
 import org.json.JSONObject;
 
 import com.pengchengzhizha.bean.PageBean;
@@ -13,15 +13,17 @@ import com.pengchengzhizha.entity.User;
 
 public class NewsService {
 	private NewsDAO newsDAO;
-	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	
+	public NewsService() {
+		newsDAO = new NewsDAO();
+	}
 	
 	public int saveNews(String title, String content, User user, boolean isEdit, int id) throws IOException, SQLException {
-		newsDAO = new NewsDAO();
 		News news = new News();
 		news.setTitle(title);
 		news.setContent(content);
 		if (! isEdit) {
-			news.setPublishTime(sdf.format(new Date()));
+			news.setPublishTime(new Timestamp(System.currentTimeMillis()));
 			news.setPublishUser(user);
 			news.setLastUpdateUser(user);
 			return newsDAO.save(news);
@@ -34,18 +36,15 @@ public class NewsService {
 	}
 
 	public News getNewsById(int id) throws SQLException, IOException {
-		newsDAO = new NewsDAO();
 		return newsDAO.getById(id);
 	}
 
-	public CharSequence getNewsListJSON(int page, int pageSize) throws SQLException, IOException {
-		newsDAO = new NewsDAO();
+	public String getNewsListJSON(int page, int pageSize) throws SQLException, IOException {
 		PageBean<News> paginatedNewsList = newsDAO.getPaginatedNewsList(page, pageSize);
 		return new JSONObject(paginatedNewsList).toString();
 	}
 
 	public int deleteNewsById(int id) throws SQLException, IOException {
-		newsDAO = new NewsDAO();
 		return newsDAO.deleteById(id);
 	}
 

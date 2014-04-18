@@ -8,7 +8,8 @@
 window.CONF = window.CONF || {};
 
 var news = CONF.news = {};
-var msg = CONF.message = {};
+var message = CONF.message = {};
+var admin = CONF.admin = {};
 
 
 
@@ -23,12 +24,25 @@ news.list.halfPagination = {
 	manage : 4,
 	pub : 5
 }
+news.list.ajaxUrl = {
+	pub : "/news/newsListJSON/",
+	manage : "/manage/news/newsListJSON/"
+}
 
 
 
 
-msg.list = {};
-msg.list.pageSize = 10;
-msg.list.halfPagination = 4;
+message.list = {};
+message.list.pageSize = 10;
+message.list.halfPagination = 4;
+message.list.ajaxUrl = "/manage/message/messageListJSON/";
+
+
+
+admin.list = {};
+admin.list.pageSize = 10000;
+admin.list.halfPagination = 4;
+admin.list.ajaxUrl = "/manage/admin/adminListJSON/";
+
 
 })();

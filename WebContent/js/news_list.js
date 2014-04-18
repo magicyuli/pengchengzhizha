@@ -12,6 +12,7 @@ function(header, footer) {
 	var initPage = 1;
 	var pageSize = CONF.news.list.pageSize.pub;
 	var halfPage = CONF.news.list.halfPagination.pub;
+	var ajaxUrl = CONF.news.list.ajaxUrl.pub;
 	
 	var renderTable = function(result) {
 		var $tbody = $('#newsListTable tbody').empty();
@@ -27,5 +28,5 @@ function(header, footer) {
 		}
 	}
 	
-	TOOLS.listUtils.init(initPage, pageSize, halfPage, renderTable);
+	TOOLS.listUtils.init(initPage, pageSize, halfPage, ajaxUrl, renderTable);
 });

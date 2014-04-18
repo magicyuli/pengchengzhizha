@@ -13,7 +13,7 @@ public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = -9177563928254289571L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		request.getSession(false).invalidate();
+		request.getSession().invalidate();
 		for (Cookie c : request.getCookies()) {
 			if (c.getName().equals(Conf.REMEBER_ME_COOKIE_KEY)) {
 				c.setMaxAge(0);

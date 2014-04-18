@@ -1,0 +1,10 @@
+<p><strong>尊敬的${name}:</strong></p>
+<p>您好！</p>
+<p>感谢您注册岛城鹏程后台管理系统。请点击以下链接或将其复制到浏览器地址栏访问以激活您的账户：</p>
+<p><a href="http://www.pengchengzhizha.com/register/activate/?id=${id}&hash=${hash}" target="_blank">http://www.pengchengzhizha.com/register/activate/?id=${id}&hash=${hash}</a></p>
+<p>激活后请联系账户管理员获得相关管理权限。</p>
+<p>谢谢使用！</p>
+<br/>
+<br/>
+<p><strong>请不要回复此邮件</strong></p>
+<p><img src="http://www.pengchengzhizha.com/img/logo.png" alt="岛城鹏程"/></p>

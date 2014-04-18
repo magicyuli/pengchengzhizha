@@ -3,7 +3,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"  content="IE-edge" />
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<meta name="author" content="magicyuli" />
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/css/login.css"/>
@@ -24,12 +24,14 @@
       <form class="form-signin" role="form" action="/login/" method="post">
         <h2 class="form-signin-heading">请登录</h2>
         <input type="text" name="name" class="form-control" placeholder="用户名" required autofocus />
-        <input type="password" name="password" class="form-control" placeholder="密码" required />
+        <input type="password" name="password" class="form-control" placeholder="密码" required autocomplete="off" />
+		<a href="/resetPassword/" id="forgetPassword">忘记密码？</a>
 		<input type="hidden" name="url" />
         <label class="checkbox">
           <input type="checkbox" name="remember_me" value="yes"> 下次自动登录
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+		<button id="registerBtn" class="btn btn-lg btn-info btn-block" type="button">注册</button>
       </form>
 
     </div>
@@ -52,6 +54,9 @@
 		}
 	%>
 	<script type="text/javascript">
+		$('#registerBtn').click(function() {
+			window.location.href = '/register/';
+		});
 		if (location.search) {
 			document.forms[0].elements['url'].value = unescape(location.search.split('?')[1].split('=')[1]) || "";
 		}

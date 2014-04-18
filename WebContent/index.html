@@ -2,6 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<meta name="keywords" content="脂渣,鹏程,岛城,岛城鹏程,鹏程脂渣,岛城鹏程脂渣,青岛,青岛脂渣,中国脂渣,青岛鹏程,猪肉,肥肉,肉脂渣,肉饼,速食产品,城阳,散装" />
 	<meta name="author" content="magicyuli" />
 	<title>首页_岛城鹏程脂渣</title>
@@ -162,6 +163,7 @@
 	<script type="text/javascript">
 		var initPage = 1;
 		var pageSize = 5;
+		var ajaxUrl = "/news/newsListJSON/";
 		
 		var render = function(result) {
 			var $ul = $('#newsList');
@@ -178,7 +180,7 @@
 				$ul.append($li);
 			}
 		}
-		TOOLS.listUtils.init(initPage, pageSize, 0, render);
+		TOOLS.listUtils.init(initPage, pageSize, 0, ajaxUrl, render);
 	</script>
 </body>
 </html>

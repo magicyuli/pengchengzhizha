@@ -1,0 +1,5 @@
+#replyPanel label{margin:0 5px 0 10px;vertical-align:text-top;}
+#replyPanel input{vertical-align:text-top;}
+#replyPanel textarea{width:100%;}
+
+.panel-body.not_replied{padding:0;}

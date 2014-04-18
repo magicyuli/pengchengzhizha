@@ -6,6 +6,8 @@
 
 .delimiter{background:url(../img/delimiter.png) no-repeat 0 0 transparent;height:10px;width:100%;}
 
+img.validationCode{cursor:pointer;}
+
 .bot_dec{background:url(../img/bottom-decration-about.png) no-repeat 0 0 transparent;height:498px;position:absolute;bottom:84px;}
 
 .bg{background:url(../img/bg.jpg) no-repeat fixed 50% 0 transparent;position:relative;}

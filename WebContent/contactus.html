@@ -2,6 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<title>联系我们_岛城鹏程脂渣</title>
 	<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
 	<link type="text/css" rel="stylesheet" href="css/base.css" media="all" />
@@ -21,20 +22,73 @@
 		
 		<div id="main" class="main">
 			<div class="contact_pic"></div>
+			<div class="delimiter"></div>
+			<h1 class="message_title">给我们留言</h1>
+			<p class="explain">我们会尽快通过邮件或电话联系您</p>
+			<form id="messageForm" action="/message/save/" method="post" onsubmit="return check()">
+				<span class="tip"><span class="required">*</span>必填</span>
+				<table class="form_table">
+					<tbody>
+						<tr>
+							<td class="label"><span class="required">*</span><label for="email">邮箱</label></td>
+							<td class="field"><input id="email" name="email" type="email" maxLength="50" size="32" required="true" /></td>
+						</tr>
+						<tr>
+							<td class="label"><span class="required">*</span><label for="confirmEmail">确认邮箱</label></td>
+							<td class="field"><input id="confirmEmail" name="confirmEmail" type="email" maxLength="50" size="32" required="true" /></td>
+						</tr>
+						<tr>
+							<td class="label"><span class="required">*</span><label for="name">姓名</label></td>
+							<td class="field"><input id="name" name="name" type="text" maxLength="30" size="32" required="true" /></td>
+						</tr>
+						<tr>
+							<td class="label"><label for="company">单位</label></td>
+							<td class="field"><input id="company" name="company" type="text" maxLength="50" size="32" /></td>
+						</tr>
+						<tr>
+							<td class="label"><label for="phone">电话</label></td>
+							<td class="field"><input id="phone" name="phone" type="text" maxLength="30" size="32" /></td>
+						</tr>
+						<tr>
+							<td class="label"><span class="required">*</span><label for="subject">留言主题</label></td>
+							<td class="field"><input id="subject" name="subject" type="text" maxLength="45" size="32" required="true" /></td>
+						</tr>
+						<tr>
+							<td class="label for_textarea"><span class="required">*</span><label for="content">留言内容</label></td>
+							<td class="field"><textarea name="content" id="content" cols="30" rows="10" required="true"></textarea></td>
+						</tr>
+						<tr>
+							<td class="label for_textarea"><span class="required">*</span>验证码</td>
+							<td class="field"><img id="VCImage" class="validationCode" src="/validationCode/" alt="验证码" title="点击更换" onclick="javascript:refresh(this)" /></td>
+						</tr>
+						<tr>
+							<td class="label for_textarea"></td>
+							<td class="field"><input id="validationCode" name="validationCode" type="text" maxLength="4" size="12" required="true" /></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btnContainer">
+					<button type="submit">提交</button>
+				</div>
+			</form>
 		</div>
 		<div id="footer" class="footer"></div>
 	</div>
 	<script type="text/javascript" src="js/require-jquery.js"></script>
 	<script type="text/javascript">
+    function refresh(obj) {
+        obj.src = "/validationCode/?"+Math.random();
+    }
+    </script>
+	<script type="text/javascript">
 		var SEQ = 6;
 		require.config({
-			baseUrl: "js",
-			shim: {
-                "jquery.tmpl": ["jquery"]
-            }
+			baseUrl: "js"
 		});
-		require(["simple"]);
+		require(["contactus"]);
 	</script>
+	
 	<script type="text/javascript">
 		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F63a4b87e1919766237ab9be47ffba671' type='text/javascript'%3E%3C/script%3E"));

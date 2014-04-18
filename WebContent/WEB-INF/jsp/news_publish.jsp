@@ -4,7 +4,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"  content="IE-edge" />
+	<meta http-equiv="X-UA-Compatible"  content="IE-edge,chrome=1" />
 	<meta name="author" content="magicyuli" />
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
 	<link href="/ueditor/themes/default/css/ueditor.css" type="text/css" rel="stylesheet" />
@@ -22,8 +22,8 @@
 	<% News news = (News) request.getAttribute("news"); %>
 	<form id="newsForm" action="/manage/news/save/" method="post" role="form" onsubmit="return check();">
 		<div class="form-group">
-			<label for="">新闻标题</label>
-			<input type="text" class="form-control" id="title" name="title" />
+			<label for="title">新闻标题</label>
+			<input type="text" class="form-control" id="title" name="title" maxLength="50" />
 		</div>
 		<div id="ueditor" style="margin-bottom:15px;" name="content"></div>
 		<input type="hidden" id="isEdit" name="isEdit" value="0" />

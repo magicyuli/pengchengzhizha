@@ -1,12 +1,22 @@
 package com.pengchengzhizha.entity;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
 public class News {
 	private int id;
 	private String title;
 	private String content;
-	private String publishTime;
+	private Timestamp publishTime;
 	private User publishUser;
 	private User lastUpdateUser;
+	
+	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	
+	public Timestamp publishTimeAsDate() {
+		return publishTime;
+	}
+	
 	
 	public int getId() {
 		return id;
@@ -27,9 +37,9 @@ public class News {
 		this.content = content;
 	}
 	public String getPublishTime() {
-		return publishTime;
+		return sdf.format(publishTime);
 	}
-	public void setPublishTime(String publishTime) {
+	public void setPublishTime(Timestamp publishTime) {
 		this.publishTime = publishTime;
 	}
 	public User getPublishUser() {

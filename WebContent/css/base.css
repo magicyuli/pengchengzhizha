@@ -1,5 +1,9 @@
 ﻿*{margin:0;padding:0;}
 
+body{-webkit-text-size-adjust:none;}
+
+button:hover{cursor:pointer;}
+
 a{text-decoration:none;}
 a:hover{text-decoration:underline;}
 li{list-style-type:none;}

@@ -10,62 +10,76 @@ import javax.servlet.http.HttpServletResponse;
 import com.pengchengzhizha.entity.News;
 import com.pengchengzhizha.entity.User;
 import com.pengchengzhizha.service.NewsService;
+import com.pengchengzhizha.util.HttpServletHelper;
 
 public class NewsServlet extends HttpServlet {
 	private static final long serialVersionUID = 7221870732072747731L;
-	private String subpath;
+	private static final String NEWS_LIST_REDIRECT_URL = "/news/newsList/";
+	
 	private NewsService newsService;
+	private HttpServletHelper httpServletHelper;
 	private User user;
 	
 	@Override
+	public void init() throws ServletException {
+		super.init();
+		newsService = new NewsService();
+		httpServletHelper = new HttpServletHelper();
+	}
+	
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		subpath = getRequestSubPath(req);
-		if (subpathMatchs("/newsList")) {
+		if (httpServletHelper.requestSubpathMatches(req, "/newsList")) {
 			req.getServletContext().getRequestDispatcher("/WEB-INF/jsp/news_list.jsp").forward(req, resp);
-		} else if (subpathMatchs("/publish")) {
+			return;
+		} else if (httpServletHelper.requestSubpathMatches(req, "/publish")) {
 			req.getServletContext().getRequestDispatcher("/WEB-INF/jsp/news_publish.jsp").forward(req, resp);
-		} else if (subpathMatchs("/edit")) {
-			newsService = new NewsService();
+			return;
+		} else if (httpServletHelper.requestSubpathMatches(req, "/edit")) {
 			try {
 				News news = newsService.getNewsById(Integer.parseInt(req.getParameter("id")));
 				req.setAttribute("news", news);
 				req.getServletContext().getRequestDispatcher("/WEB-INF/jsp/news_publish.jsp").forward(req, resp);
+				return;
 			} catch (Exception e) {
 				e.printStackTrace();
 				resp.sendError(500, "获取新闻失败！");
+				return;
 			}
-		} else if (subpathMatchs("/display")) {
-			newsService = new NewsService();
+		} else if (httpServletHelper.requestSubpathMatches(req, "/display")) {
 			try {
 				News news = newsService.getNewsById(Integer.parseInt(req.getParameter("id")));
 				req.setAttribute("news", news);
 				req.getServletContext().getRequestDispatcher("/WEB-INF/jsp/news_display.jsp").forward(req, resp);
+				return;
 			} catch (Exception e) {
 				e.printStackTrace();
 				resp.sendError(500, "获取新闻失败！");
+				return;
 			}
-		} else if (subpathMatchs("/delete")) {
-			newsService = new NewsService();
+		} else if (httpServletHelper.requestSubpathMatches(req, "/delete")) {
 			try {
 				if (newsService.deleteNewsById(Integer.parseInt(req.getParameter("id"))) == 1) {
-					redirectToNewsListAfterSuccess(resp, "删除成功！");
+					httpServletHelper.sendRedirectAfterAlerting(resp, "删除成功！", NEWS_LIST_REDIRECT_URL);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 				resp.sendError(500, "删除新闻失败！");
+				return;
 			}
-		} else if (subpathMatchs("/")) {
+		} else if (httpServletHelper.requestSubpathMatches(req, "/")) {
 			req.getServletContext().getRequestDispatcher("/WEB-INF/jsp/news.jsp").forward(req, resp);
+			return;
 		} else {
-			resp.sendError(404, "资源不存在！");
+			resp.sendError(404, "请求的资源不存在！");
+			return;
 		}
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		subpath = getRequestSubPath(req);
 		user = (User) req.getSession().getAttribute("user");
-		if (subpathMatchs("/save")) {
+		if (httpServletHelper.requestSubpathMatches(req, "/save")) {
 			String title = req.getParameter("title");
 			String content = req.getParameter("content");
 			boolean isEdit = req.getParameter("isEdit").equals("1") ? true : false;
@@ -74,19 +88,21 @@ public class NewsServlet extends HttpServlet {
 				id = Integer.parseInt(req.getParameter("newsId"));
 			}
 			try {
-				newsService = new NewsService();
 				newsService.saveNews(title, content, user, isEdit, id);
 				if (isEdit) {
-					redirectToNewsListAfterSuccess(resp, "编辑成功！点击新闻列表标题查看。");
+					httpServletHelper.sendRedirectAfterAlerting(resp, "编辑成功！点击新闻列表标题查看。", NEWS_LIST_REDIRECT_URL);
+					return;
 				} else {
-					redirectToNewsListAfterSuccess(resp, "发布成功！点击新闻列表标题查看。");
+					httpServletHelper.sendRedirectAfterAlerting(resp, "发布成功！点击新闻列表标题查看。", NEWS_LIST_REDIRECT_URL);
+					return;
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 				resp.sendError(500, "新闻存储失败！");
+				return;
 			}
-		} else if (subpathMatchs("/newsListJSON")) {
-			newsService = new NewsService();
+		} else if (httpServletHelper.requestSubpathMatches(req, "/newsListJSON")) {
+			resp.setContentType("application/json");
 			PrintWriter out = resp.getWriter();
 			int pageSize = Integer.parseInt(req.getParameter("pageSize"));
 			int page = Integer.parseInt(req.getParameter("page"));
@@ -95,29 +111,14 @@ public class NewsServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 				resp.sendError(500, "获取新闻列表失败！");
+				return;
 			}
 			resp.flushBuffer();
+			return;
+		} else {
+			resp.sendError(404, "请求的资源不存在！");
+			return;
 		}
 	}
 
-	private void redirectToNewsListAfterSuccess(HttpServletResponse resp, String msg) throws IOException {
-		PrintWriter out = resp.getWriter();
-		out.write("<head>");
-		out.write("<script>");
-		out.write("alert('" + msg + "');");
-		out.write("</script>");
-		out.write("<meta http-equiv=\"content-type\" content=\"text/html;charset=utf8\" />");
-		out.write("<meta http-equiv=\"refresh\" content=\"0;url=/news/newsList/\" />");
-		out.write("</head>");
-		resp.flushBuffer();
-	}
-
-	private String getRequestSubPath(HttpServletRequest req) {
-		return req.getRequestURI().substring(req.getServletPath().length());
-	}
-	
-	
-	private boolean subpathMatchs(String string) {
-		return subpath.equals(string) || subpath.equals(string + "/");
-	}
 }
